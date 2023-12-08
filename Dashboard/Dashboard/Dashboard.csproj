@@ -99,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTMLPage1.html" />
     <Content Include="Resources\benefits.png" />
     <Content Include="Resources\calendar.png" />
     <None Include="Resources\settings1.png" />
