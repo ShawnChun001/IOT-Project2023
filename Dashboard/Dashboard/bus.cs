@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class tester : Form
+    public partial class bus : Form
     {
-        public tester()
+        public bus()
         {
             InitializeComponent();
         }
