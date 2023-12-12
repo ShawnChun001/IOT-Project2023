@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class MainForm : Form
+    public partial class DashboardSetting : Form
     {
-        public MainForm()
+        public DashboardSetting()
         {
             InitializeComponent();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Dashboard
 {
     public partial class login_form : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\IoTGradedProjectForm\IOT-Project2023\Dashboard\Dashboard\Users.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xenon\source\repos\IOT-Project2023\Dashboard\Dashboard\App Source\loginData.mdf;Integrated Security=True;Connect Timeout=30");
 
         public login_form()
         {
@@ -69,6 +69,29 @@ namespace Dashboard
                             adapter.Fill(table);
 
                             if(table.Rows.Count >= 1)
+                            {
+                                MessageBox.Show("Logged in successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                Form1 mForm = new Form1();
+                                mForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        String selectData2 = "SELECT * FROM user WHERE username = @username AND passowrd = @pass";
+                        using (SqlCommand cmd = new SqlCommand(selectData2, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@username", login_username.Text);
+                            cmd.Parameters.AddWithValue("@pass", login_password.Text);
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+
+                            if (table.Rows.Count >= 1)
                             {
                                 MessageBox.Show("Logged in successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

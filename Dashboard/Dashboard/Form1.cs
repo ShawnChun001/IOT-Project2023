@@ -82,6 +82,13 @@ namespace Dashboard
             PnlNav.Height = btnCalender.Height;
             PnlNav.Top = btnCalender.Top;
             btnCalender.BackColor = Color.FromArgb(46, 51, 73);
+
+            lblDashboard.Text = "Manage Accounts";
+            this.PnlFormLoader.Controls.Clear();
+            frmManage_Account FrmDashboard_Vrb = new frmManage_Account() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
+            FrmDashboard_Vrb.Show();
         }
 
         private void btnContactUs_Click(object sender, EventArgs e)
@@ -89,6 +96,13 @@ namespace Dashboard
             PnlNav.Height = btnContactUs.Height;
             PnlNav.Top = btnContactUs.Top;
             btnContactUs.BackColor = Color.FromArgb(46, 51, 73);
+
+            lblDashboard.Text = "Manage Dashboard";
+            this.PnlFormLoader.Controls.Clear();
+            Manage_Dashboard FrmDashboard_Vrb = new Manage_Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
+            FrmDashboard_Vrb.Show();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -96,6 +110,13 @@ namespace Dashboard
             PnlNav.Height = btnSettings.Height;
             PnlNav.Top = btnSettings.Top;
             btnSettings.BackColor = Color.FromArgb(46, 51, 73);
+
+            lblDashboard.Text = "Settings";
+            this.PnlFormLoader.Controls.Clear();
+            DashboardSetting FrmDashboard_Vrb = new DashboardSetting() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
+            FrmDashboard_Vrb.Show();
         }
 
         private void BtnDashboard_Leave(object sender, EventArgs e)
@@ -123,9 +144,9 @@ namespace Dashboard
             btnSettings.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
