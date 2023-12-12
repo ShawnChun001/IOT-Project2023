@@ -72,7 +72,7 @@ namespace Dashboard
                             {
                                 MessageBox.Show("Logged in successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                MainForm mForm = new MainForm();
+                                Form1 mForm = new Form1();
                                 mForm.Show();
                                 this.Hide();
                             }

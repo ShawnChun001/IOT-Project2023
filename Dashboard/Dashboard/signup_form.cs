@@ -60,7 +60,7 @@ namespace Dashboard
                             }
                             else
                             {
-                                string insertData = "INSERT INTO admin (email, username, pasowrd, date_created) " +
+                                string insertData = "INSERT INTO admin (email, username, passowrd, date_created) " +
                                     "VALUES(@email, @username, @pass, @date)";
 
                                 DateTime date = DateTime.Today;
@@ -113,7 +113,7 @@ namespace Dashboard
                             }
                             else
                             {
-                                string insertData = "INSERT INTO admin (email, username, pasowrd, date_created) " +
+                                string insertData = "INSERT INTO admin (email, username, passowrd, date_created) " +
                                     "VALUES(@email, @username, @pass, @date)";
 
                                 DateTime date = DateTime.Today;
