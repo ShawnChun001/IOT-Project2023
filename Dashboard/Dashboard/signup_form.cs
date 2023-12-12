@@ -14,7 +14,7 @@ namespace Dashboard
 {
     public partial class signup_form : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PJJP\OneDrive\Documents\LoginData.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xenon\source\repos\IOT-Project2023\Dashboard\Dashboard\App Source\loginData.mdf;Integrated Security=True;Connect Timeout=30");
 
         public signup_form()
         {
@@ -46,7 +46,7 @@ namespace Dashboard
                     try
                     {
                         connect.Open();
-                        String checkUsername = "SELECT * FROM admin WHERE username = '" + signup_username.Text.Trim() + "'"; //admin is table name
+                        String checkUsername = "SELECT * FROM user WHERE username = '" + signup_username.Text.Trim() + "'"; //USER is table name
 
                         using (SqlCommand checkUser = new SqlCommand(checkUsername, connect))
                         {
@@ -60,60 +60,7 @@ namespace Dashboard
                             }
                             else
                             {
-                                string insertData = "INSERT INTO admin (email, username, passowrd, date_created) " +
-                                    "VALUES(@email, @username, @pass, @date)";
-
-                                DateTime date = DateTime.Today;
-
-                                using (SqlCommand cmd = new SqlCommand(insertData, connect))
-                                {
-                                    cmd.Parameters.AddWithValue("@email", signup_email.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@username", signup_username.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@pass", signup_password.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@date", date);
-
-                                    cmd.ExecuteNonQuery();
-
-                                    MessageBox.Show("Register succesfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    //TO SWITCH THE FORM
-                                    login_form lForm = new login_form();
-                                    lForm.Show();
-                                    this.Hide();
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error connecting Database: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
-                }
-
-                if (connect.State != ConnectionState.Open)
-                {
-                    try
-                    {
-                        connect.Open();
-                        String checkUsername = "SELECT * FROM admin WHERE username = '" + signup_username.Text.Trim() + "'"; //admin is table name
-
-                        using (SqlCommand checkUser = new SqlCommand(checkUsername, connect))
-                        {
-                            SqlDataAdapter adapter = new SqlDataAdapter(checkUser);
-                            DataTable table = new DataTable();
-                            adapter.Fill(table);
-
-                            if (table.Rows.Count >= 1)
-                            {
-                                MessageBox.Show(signup_username.Text + "is already exist", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                string insertData = "INSERT INTO admin (email, username, passowrd, date_created) " +
+                                string insertData = "INSERT INTO user (email, username, passowrd, date_created) " +
                                     "VALUES(@email, @username, @pass, @date)";
 
                                 DateTime date = DateTime.Today;

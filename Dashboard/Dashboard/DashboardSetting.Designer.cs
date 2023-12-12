@@ -1,6 +1,6 @@
 ﻿namespace Dashboard
 {
-    partial class frmAnalytics
+    partial class DashboardSetting
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -38,26 +40,41 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(76, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 31);
+            this.label1.Size = new System.Drawing.Size(99, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "User and Download Analytics Here";
+            this.label1.Text = "Setting";
             // 
-            // frmAnalytics
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dashboard.Properties.Resources.Setting;
+            this.pictureBox1.Location = new System.Drawing.Point(82, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(702, 322);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // DashboardSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(860, 474);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAnalytics";
-            this.Text = "frmAnalytics";
+            this.Name = "DashboardSetting";
+            this.Text = "DashboardSetting";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
     }
 }
