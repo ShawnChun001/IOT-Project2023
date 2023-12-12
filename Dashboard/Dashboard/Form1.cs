@@ -122,5 +122,10 @@ namespace Dashboard
         {
             btnSettings.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

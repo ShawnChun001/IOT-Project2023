@@ -14,7 +14,7 @@ namespace Dashboard
 {
     public partial class login_form : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PJJP\OneDrive\Documents\LoginData.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\IoTGradedProjectForm\IOT-Project2023\Dashboard\Dashboard\Users.mdf;Integrated Security=True;Connect Timeout=30");
 
         public login_form()
         {
